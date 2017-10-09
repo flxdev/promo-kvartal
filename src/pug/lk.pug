@@ -1,0 +1,162 @@
+extends _layout
+
+block content
+    .container-main
+        section.container
+            .container-wrapper.row
+                .wrapper
+                    .title Личный кабинет
+
+                    .container-tabs
+                        .container-tab-btn
+                            .tabs-link.current-t(data-tab="tab-1") Регистрация чека
+                            .tabs-link(data-tab="tab-2") Внесенные чеки
+                            .tabs-link(data-tab="tab-3") Личные данные
+                        #tab-1.container-content.tabs-content.current-t
+                            .wrapper-form
+                                form.js-form
+                                    .wrapper-block-inputs
+                                        .wrapper-block-inputs_title Регистрация чека
+                                        .container-add
+                                            .block-add
+                                                .block-input-label.width-block-43
+                                                    label.label Номер чека
+                                                    input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="Заполните поле").input-box
+
+                                                .block-input-label.width-block-25
+                                                    label.label Номер покупки
+                                                    input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="&nbsp;").input-box
+
+                                                .block-input-label.width-block-25
+                                                    label.label Номер покупки
+                                                    input(type="text" data-validation="custom required" data-validation-error-msg="&nbsp;").input-box
+
+                                        .btn-block-add Внести ещё один чек
+                                        .box-btn-form
+                                            button.btn-form Зарегистрировать чек
+                            // Modal Window
+                            .wrapper-form.response(style='display: none;')
+                                .wrapper-form
+                                    .wrapper-block-inputs
+                                        .wrapper-block-inputs_title Спасибо за обращение!
+                                        .modal-container_txt
+                                            p Ваше сообщение успешно отправлено.
+
+                        #tab-2.container-content.tabs-content
+                            .wrapper-form
+                                form.js-form
+                                    .wrapper-block-inputs
+                                        .wrapper-block-inputs_title Ваши чеки
+                                        .snipet-table
+                                            .container-table-check
+                                                .table-check_head
+                                                    .table-check_head-block Промо-код
+                                                    .table-check_head-block Ваш чек
+                                                    .table-check_head-block Статус
+                                                .table-check_body
+                                                    .table-check_body-row
+                                                        // В игре или Не выиграл
+                                                        .block-in-game
+                                                            .table-check_body-block 000991
+                                                            .table-check_body-block 0000000031
+                                                            .table-check_body-block В игре
+
+                                                    .table-check_body-row
+                                                        // Отмена(добавляем класс .cancel)
+                                                        .block-cancel-ok.cancel
+                                                            .table-check_body-code 001800
+                                                            .table-check_body-check-st
+                                                                .block-row
+                                                                    .block-row_ckeck 0001232131
+                                                                    .block-row_status Отменен
+                                                                .block-row-big
+                                                                    .icon
+                                                                    .block-row-big_txt Узнать причину отмены:
+                                                                    .block-row-big_tel +375172667445
+
+
+                                                    .table-check_body-row
+                                                        // В игре или Не выиграл
+                                                        .block-in-game
+                                                            .table-check_body-block 002991
+                                                            .table-check_body-block 9090910293
+                                                            .table-check_body-block В игре
+
+                                                    .table-check_body-row
+                                                        // Отмена(добавляем класс .ok)
+                                                        .block-cancel-ok.ok
+                                                            .table-check_body-code 002992
+                                                            .table-check_body-check-st
+                                                                .block-row
+                                                                    .block-row_ckeck 1293480912
+                                                                    .block-row_status Выиграл!
+                                                                .block-row-big
+                                                                    .icon
+                                                                    a(href="#").block-row-big_txt Узнать выигрыш в новостях
+
+                                                    .table-check_body-row
+                                                        // В игре или Не выиграл
+                                                        .block-in-game
+                                                            .table-check_body-block 002993
+                                                            .table-check_body-block 1298309381
+                                                            .table-check_body-block Не выиграл
+
+
+                        #tab-3.container-content.tabs-content
+                            .wrapper-form
+                                form.js-form
+                                    .wrapper-block-inputs.line-btn
+                                        .wrapper-block-inputs_title Личные данные
+                                        .block-input-label
+                                            label.label Фамилия Имя Отчество
+                                            input(data-validation="length  required" type="text" data-validation-length='min3' data-validation-error-msg="Заполните поле").input-box
+
+                                        .block-input-label
+                                            label.label E-mail
+                                            input(data-validation="email" type="email" data-validation-error-msg="Заполните поле").input-box
+
+                                        .block-input-label
+                                            label.label Телефон
+                                            input(type="tel" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Заполните поле").input-box
+
+                                        .block-input-label
+                                            label.label Населённый пункт
+                                            input(type="text" data-validation="custom required" data-validation-error-msg="Укажите населённый пункт, используя только киррилицу").input-box
+
+                                        .block-input-label.width-block-50
+                                            label.label Улица
+                                            input(type="text" data-validation="custom required" data-validation-error-msg="Заполните поле").input-box
+
+                                        .block-input-label.width-block-14
+                                            label.label Дом
+                                            input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="&nbsp;").input-box
+
+                                        .block-input-label.width-block-14
+                                            label.label Корпус
+                                            input(type="text").input-box
+
+                                        .block-input-label.width-block-14
+                                            label.label Квартира
+                                            input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="&nbsp;").input-box
+
+                                    .wrapper-block-inputs
+                                        .wrapper-block-inputs_title Изменить пароль
+
+                                        .block-input-label
+                                            label.label Новый пароль
+                                            input(type="password" data-validation="custom required" data-validation-error-msg="Заполните поле").input-box
+
+                                        .block-input-label
+                                            label.label Подтвердить пароль
+                                            input(type="password" data-validation="custom required" data-validation-error-msg="Заполните поле").input-box
+
+                                        .box-btn-form
+                                            button.btn-form Сохранить
+
+                            // Modal Window
+                            .wrapper-form.response(style='display: none;')
+                                .wrapper-form
+                                    .wrapper-block-inputs
+                                        .wrapper-block-inputs_title Спасибо за обращение!
+                                        .modal-container_txt
+                                            p Ваше сообщение успешно отправлено.

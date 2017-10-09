@@ -1,0 +1,110 @@
+extends _layout
+
+block content
+    .container-main
+        section.container
+            .container-wrapper.row
+                .wrapper
+                    .title Регистрация чека
+
+                    .container-tabs
+                        .container-tab-btn
+                            .tabs-link.current-t(data-tab="tab-1") Регистрирую впервые
+                            .tabs-link(data-tab="tab-2") Уже регистрировал
+                        #tab-1.container-content.tabs-content.current-t
+                            .wrapper-form
+                                form.js-form
+                                    .wrapper-block-inputs.line-btn
+                                        .wrapper-block-inputs_title Регистрация чека
+                                        .container-add
+                                            .block-add
+                                                .block-input-label.width-block-75
+                                                    label.label Номер чека
+                                                    a(href="#").link-popup Как правильно внести?
+                                                    input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="Заполните поле").input-box
+
+                                                .block-input-label.width-block-22
+                                                    label.label Номер кассы
+                                                    input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="&nbsp;").input-box
+                                        .btn-block-add Внести ещё один чек
+
+                                    .wrapper-block-inputs
+                                        .wrapper-block-inputs_title Личные данные
+                                        .block-input-label
+                                            label.label Фамилия Имя Отчество
+                                            input(data-validation="length  required" type="text" data-validation-length='min3' data-validation-error-msg="Заполните поле").input-box
+
+                                        .block-input-label
+                                            label.label E-mail
+                                            input(data-validation="email" type="email" data-validation-error-msg="Заполните поле").input-box
+
+                                        .block-input-label
+                                            label.label Телефон
+                                            input(type="tel" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Заполните поле").input-box
+
+                                        .block-input-label
+                                            label.label Населённый пункт
+                                            input(type="text" data-validation="custom required" data-validation-error-msg="Укажите населённый пункт, используя только киррилицу").input-box
+
+                                        .block-input-label.width-block-50
+                                            label.label Улица
+                                            input(type="text" data-validation="custom required" data-validation-error-msg="Заполните поле").input-box
+
+                                        .block-input-label.width-block-14
+                                            label.label Дом
+                                            input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="&nbsp;").input-box
+
+                                        .block-input-label.width-block-14
+                                            label.label Корпус
+                                            input(type="text").input-box
+
+                                        .block-input-label.width-block-14
+                                            label.label Квартира
+                                            input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="&nbsp;").input-box
+
+                                        .box-check
+                                            .input-wrapp.block-check-inline
+                                                input.ch(type='checkbox' id='m1' data-validation="required" data-validation-error-msg="Заполните поле")
+                                                label(for='m1') Я согласен с правилами игры и безоговорочно принимаю все положения
+
+                                        .box-btn-form
+                                            button.btn-form Зарегистрировать чек
+
+                            // Modal Window
+                            .wrapper-form.response(style='display: none;')
+                                .wrapper-form
+                                    .wrapper-block-inputs
+                                        .wrapper-block-inputs_title Спасибо за обращение!
+                                        .modal-container_txt
+                                            p Ваше сообщение успешно отправлено.
+
+                        #tab-2.container-content.tabs-content
+                            .wrapper-form
+                                form.js-form
+                                    .wrapper-block-inputs
+                                        .wrapper-block-inputs_title Войти в личный кабинет
+                                        .block-input-label
+                                            label.label E-mail
+                                            input(data-validation="email" type="email" data-validation-error-msg="Заполните поле").input-box
+                                        .block-input-label
+                                            label.label Пароль
+                                            input(type="password" data-validation="custom required" data-validation-error-msg="Заполните поле").input-box
+                                        .btn-pass Забыли пароль?
+                                        .box-btn-form
+                                            button.btn-form Войти и зарегистрировать чек
+
+                                    .wrapper-block-inputs.edit-pass
+                                        .wrapper-block-inputs_title Восстановить пароль
+                                        .block-input-label
+                                            label.label E-mail, указанный при регистрации
+                                            input(data-validation="email" type="email" data-validation-error-msg="Заполните поле").input-box
+                                        .box-btn-form
+                                            button.btn-form Восстановить пароль
+
+                            // Modal Window
+                            .wrapper-form.response(style='display: none;')
+                                .wrapper-form
+                                    .wrapper-block-inputs
+                                        .wrapper-block-inputs_title Спасибо за обращение!
+                                        .modal-container_txt
+                                            p Ваше сообщение успешно отправлено.
