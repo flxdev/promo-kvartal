@@ -608,6 +608,10 @@ body{
 
 .container-txt{
   width: 100%;
+  img{
+    width: 100%;
+    margin-bottom: 20px;
+  }
   p{
     @include fontHelios;
     font-size: 16px;
@@ -651,6 +655,19 @@ body{
       padding: 30px 35px 30px 0;
       text-align: left;
       border-bottom: 1px solid #b2b2b2;
+    }
+  }
+  ol{
+    list-style-type: decimal;
+    padding: 0;
+    padding-left: 18px;
+    li{
+      @include fontHelios;
+      color: #323732;
+      font-size: 16px;
+      margin-bottom: 15px;
+      display: list-item;
+      padding-left: 10px;
     }
   }
 }
@@ -871,6 +888,7 @@ body{
 
 .wrapper-block-inputs.line-btn{
   border-bottom: 1px solid #bebebe;
+  padding-bottom: 20px;
 }
 
 .box-check{
@@ -1038,10 +1056,10 @@ body{
     color: #323732;
     padding-right: 30px;
     &:nth-child(1){
-      width: 38%;
+      width: 37%;
     }
     &:nth-child(2){
-      width: 35%;
+      width: 36%;
     }
     &:nth-child(3){
       width: 27%;
@@ -1157,4 +1175,24 @@ body{
     display: block;
     margin-bottom: 10px;
   }
+}
+
+.block-list-card{
+  list-style-type: decimal;
+  padding: 0;
+  padding-left: 18px;
+  li{
+    @include fontHelios;
+    color: #323732;
+    font-size: 16px;
+    margin-bottom: 15px;
+    display: list-item;
+    padding-left: 10px;
+  }
+}
+
+#info-card{
+  width: 600px;
+  padding-top: 50px;
+  padding-bottom: 30px;
 }

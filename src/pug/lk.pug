@@ -9,31 +9,29 @@ block content
 
                     .container-tabs
                         .container-tab-btn
-                            .tabs-link.current-t(data-tab="tab-1") Регистрация чека
-                            .tabs-link(data-tab="tab-2") Внесенные чеки
+                            .tabs-link.current-t(data-tab="tab-1") Мои карточки
+                            .tabs-link(data-tab="tab-2") Внесенные промо-коды
                             .tabs-link(data-tab="tab-3") Личные данные
                         #tab-1.container-content.tabs-content.current-t
                             .wrapper-form
                                 form.js-form
+                                    .wrapper-block-inputs.line-btn
+                                        .wrapper-block-inputs_title Номера карточек
+                                        ol.block-list-card
+                                            li 0230503
+                                            li 0260503
                                     .wrapper-block-inputs
-                                        .wrapper-block-inputs_title Регистрация чека
+                                        .wrapper-block-inputs_title Добавить карточку
                                         .container-add
                                             .block-add
-                                                .block-input-label.width-block-43
-                                                    label.label Номер чека
+                                                .block-input-label
+                                                    label.label Номер карточки
+                                                    a(href="javascript:;" data-fancybox data-src="#info-card").link-popup Что это такое?
                                                     input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="Заполните поле").input-box
 
-                                                .block-input-label.width-block-25
-                                                    label.label Номер покупки
-                                                    input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="&nbsp;").input-box
-
-                                                .block-input-label.width-block-25
-                                                    label.label Номер покупки
-                                                    input(type="text" data-validation="custom required" data-validation-error-msg="&nbsp;").input-box
-
-                                        .btn-block-add Внести ещё один чек
+                                        .btn-block-add Внести еще одну карточку
                                         .box-btn-form
-                                            button.btn-form Зарегистрировать чек
+                                            button.btn-form Добавить
                             // Modal Window
                             .wrapper-form.response(style='display: none;')
                                 .wrapper-form
@@ -46,19 +44,19 @@ block content
                             .wrapper-form
                                 form.js-form
                                     .wrapper-block-inputs
-                                        .wrapper-block-inputs_title Ваши чеки
+                                        .wrapper-block-inputs_title Ваши промо-коды
                                         .snipet-table
                                             .container-table-check
                                                 .table-check_head
                                                     .table-check_head-block Промо-код
-                                                    .table-check_head-block Ваш чек
+                                                    .table-check_head-block Дата
                                                     .table-check_head-block Статус
                                                 .table-check_body
                                                     .table-check_body-row
                                                         // В игре или Не выиграл
                                                         .block-in-game
                                                             .table-check_body-block 000991
-                                                            .table-check_body-block 0000000031
+                                                            .table-check_body-block 01.01.2017
                                                             .table-check_body-block В игре
 
                                                     .table-check_body-row
@@ -67,7 +65,7 @@ block content
                                                             .table-check_body-code 001800
                                                             .table-check_body-check-st
                                                                 .block-row
-                                                                    .block-row_ckeck 0001232131
+                                                                    .block-row_ckeck 01.01.2017
                                                                     .block-row_status Отменен
                                                                 .block-row-big
                                                                     .icon
@@ -79,7 +77,7 @@ block content
                                                         // В игре или Не выиграл
                                                         .block-in-game
                                                             .table-check_body-block 002991
-                                                            .table-check_body-block 9090910293
+                                                            .table-check_body-block 01.01.2017
                                                             .table-check_body-block В игре
 
                                                     .table-check_body-row
@@ -88,17 +86,17 @@ block content
                                                             .table-check_body-code 002992
                                                             .table-check_body-check-st
                                                                 .block-row
-                                                                    .block-row_ckeck 1293480912
+                                                                    .block-row_ckeck 01.01.2017
                                                                     .block-row_status Выиграл!
                                                                 .block-row-big
                                                                     .icon
-                                                                    a(href="#").block-row-big_txt Узнать выигрыш в новостях
+                                                                    .block-row-big_txt Тут написан выигрыш
 
                                                     .table-check_body-row
                                                         // В игре или Не выиграл
                                                         .block-in-game
                                                             .table-check_body-block 002993
-                                                            .table-check_body-block 1298309381
+                                                            .table-check_body-block 01.01.2017
                                                             .table-check_body-block Не выиграл
 
 
@@ -152,6 +150,10 @@ block content
 
                                         .box-btn-form
                                             button.btn-form Сохранить
+
+
+
+
 
                             // Modal Window
                             .wrapper-form.response(style='display: none;')
