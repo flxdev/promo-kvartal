@@ -144,7 +144,8 @@ function initValidForm() {
 
 function initNewPass(){
     $('.btn-pass').on('click', function () {
-        $(this).closest('.wrapper-form').find('.wrapper-block-inputs').removeClass('edit-pass');
+        $(this).closest('.container-content').find('.wrapper-block-inputs').removeClass('edit-pass');
+        $(this).closest('.container-content').find('.restore_pass').removeClass('edit-pass');
         $(this).closest('.wrapper-block-inputs').addClass('edit-pass');
     });
 }

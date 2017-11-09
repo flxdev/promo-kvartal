@@ -101,20 +101,21 @@ block content
                                         .btn-pass Забыли пароль?
                                         .box-btn-form
                                             button.btn-form Войти и зарегистрироваться
-
-                                    .wrapper-block-inputs.edit-pass
-                                        .wrapper-block-inputs_title Восстановить пароль
-                                        .block-input-label
-                                            label.label E-mail, указанный при регистрации
-                                            input(data-validation="email" type="email" data-validation-error-msg="Заполните поле").input-box
-                                        .btn-pass Авторизоваться
-                                        .box-btn-form
-                                            button.btn-form Восстановить пароль
-
-                            // Modal Window
-                            .wrapper-form.response(style='display: none;')
+                            .restore_pass.edit-pass
                                 .wrapper-form
-                                    .wrapper-block-inputs
-                                        .wrapper-block-inputs_title Спасибо за обращение!
-                                        .modal-container_txt
-                                            p Ваше сообщение успешно отправлено.
+                                        .wrapper-block-inputs
+                                            .wrapper-block-inputs_title Восстановить пароль
+                                            .block-input-label
+                                                label.label E-mail, указанный при регистрации
+                                                input(data-validation="email" type="email" data-validation-error-msg="Заполните поле").input-box
+                                            .btn-pass Авторизоваться
+                                            .box-btn-form
+                                                button.btn-form Восстановить пароль
+
+                                // Modal Window
+                                .wrapper-form.response(style='display: none;')
+                                    .wrapper-form
+                                        .wrapper-block-inputs
+                                            .wrapper-block-inputs_title Спасибо за обращение!
+                                            .modal-container_txt
+                                                p Ваше сообщение успешно отправлено.
