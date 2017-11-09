@@ -267,11 +267,12 @@ body{
 .container-partners{
   margin-bottom: 40px;
   .container-partners_title{
-    @include fontHelios;
-    font-size: 16px;
+    @include fontHeliosBlack;
     color: white;
     text-align: center;
-    margin-bottom: 10px;
+    font-size: 42px;
+    text-shadow: 4px 4px rgba(0, 0, 0, .1);
+    padding-bottom: 25px;
   }
 }
 
@@ -1245,5 +1246,33 @@ body{
     color: #7e837e;
     transition: color .5s;
     letter-spacing: 1.1px;
+  }
+}
+
+.block-c{
+  @include fontHelios;
+  font-weight: 400;
+  font-size: 14px;
+  color: #7e837e;
+  line-height: 1.45;
+  position: absolute;
+  bottom: 37px;
+}
+
+.block-relations{
+  @include display-inline-top;
+  margin-right: 30px;
+}
+
+.disp-b{
+  @include display-inline-middle;
+  width: 50%;
+  .btn-form{
+    float: left;
+  }
+  .btn-link-green{
+    position: relative;
+    float: right;
+    top: 0;
   }
 }

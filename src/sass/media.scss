@@ -129,6 +129,9 @@
       margin-bottom: 60px;
     }
   }
+  .block-relations{
+    display: block;
+  }
 }
 
 @media all and (max-width: 767px){
@@ -243,6 +246,14 @@
   }
   .container-table-check {
     width: 470px;
+  }
+  .block-c{
+    bottom: 25px;
+  }
+  .footer {
+    .wrapper{
+      padding: 40px 0 50px;
+    }
   }
 }
 
