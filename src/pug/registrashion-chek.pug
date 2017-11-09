@@ -8,8 +8,10 @@ block content
                     .title Регистрация
                     .container-tabs
                         .container-tab-btn
-                            .tabs-link.current-t(data-tab="tab-1") Зарегистрироваться
-                            .tabs-link(data-tab="tab-2") Войти
+                            .tabs-link.current-t(data-tab="tab-1")
+                                span Зарегистрироваться
+                            .tabs-link(data-tab="tab-2")
+                                span Войти
                         #tab-1.container-content.tabs-content.current-t
                             .wrapper-form
                                 form.js-form
@@ -105,6 +107,7 @@ block content
                                         .block-input-label
                                             label.label E-mail, указанный при регистрации
                                             input(data-validation="email" type="email" data-validation-error-msg="Заполните поле").input-box
+                                        .btn-pass Авторизоваться
                                         .box-btn-form
                                             button.btn-form Восстановить пароль
 

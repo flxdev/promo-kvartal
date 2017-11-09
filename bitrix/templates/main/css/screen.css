@@ -2183,6 +2183,14 @@ body {
   @media all and (max-width: 680px){
   .container-tab-btn .tabs-link{
     width: 100%; }
+  .container-tab-btn .tabs-link span{
+    border-bottom: 2px solid black; }
+  .container-tab-btn .tabs-link.current-t{
+    width: 100%;
+    background-color: #d81c09;
+    color: white; }
+  .container-tab-btn .tabs-link.current-t span{
+    border-bottom: none; }
   #info-card{
     width: 90%;
     padding-top: 50px;

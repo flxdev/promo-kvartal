@@ -250,6 +250,17 @@
   .container-tab-btn{
     .tabs-link{
       width: 100%;
+      span{
+        border-bottom: 2px solid black;
+      }
+    }
+    .tabs-link.current-t{
+      width: 100%;
+      background-color: #d81c09;
+      color: white;
+      span{
+        border-bottom: none;
+      }
     }
   }
 
