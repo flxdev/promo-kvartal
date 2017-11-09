@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta content="IE=Edge" http-equiv="X-UA-Compatible">
     <link rel="stylesheet" media="all" href="css/screen.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicon/144x144.png">
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru-RU"></script>
   </head>
   <body style="-webkit-font-smoothing: antialiased;">
@@ -24,7 +39,7 @@
             <li><a class="link-anchor-menu" href="#map">карта магазинов</a></li>
             <li><a href="#">правила участия</a></li>
           </ul>
-        </nav><a class="btn-link-green" href="registrashion-chek.html">Зарегистрироваться</a>
+        </nav><a class="btn-link-green" href="registrashion-chek.html">Вход/Регистрация</a>
       </div>
     </header>
     <div class="out">
@@ -35,18 +50,19 @@
               <div class="title">Регистрация</div>
               <div class="container-tabs">
                 <div class="container-tab-btn">
-                  <div class="tabs-link current-t" data-tab="tab-1">Регистрирую впервые</div>
-                  <div class="tabs-link" data-tab="tab-2">Уже регистрировал</div>
+                  <div class="tabs-link current-t" data-tab="tab-1">Зарегистрироваться</div>
+                  <div class="tabs-link" data-tab="tab-2">Войти</div>
                 </div>
                 <div class="container-content tabs-content current-t" id="tab-1">
                   <div class="wrapper-form">
                     <form class="js-form">
                       <div class="wrapper-block-inputs line-btn">
-                        <div class="wrapper-block-inputs_title">Регистрация карточки</div>
+                        <div class="wrapper-block-inputs_title">Регистрация карты</div>
+                        <div class="wrapper-block-inputs_info-txt">Если вы потеряли полученную ранее и зарегистрированную в системе карту, достаточно войти в Ваш личный кабинет и привязать новую карту. При этом присвоенные ранее промо-коды сохранятся.</div>
                         <div class="container-add">
                           <div class="block-add">
                             <div class="block-input-label">
-                              <label class="label">Номер карточки</label><a class="link-popup" href="javascript:;" data-fancybox data-src="#info-card">Что это такое?</a>
+                              <label class="label">Номер карты</label><a class="link-popup" href="javascript:;" data-fancybox data-src="#info-card">Что это такое?</a>
                               <input class="input-box" type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="Заполните поле">
                             </div>
                           </div>
@@ -54,6 +70,7 @@
                       </div>
                       <div class="wrapper-block-inputs">
                         <div class="wrapper-block-inputs_title">Личные данные</div>
+                        <div class="wrapper-block-inputs_info-txt">Ввод достоверных личных данных - обязательное условие участия в рекламной игре.</div>
                         <div class="block-input-label">
                           <label class="label">Фамилия Имя Отчество</label>
                           <input class="input-box" data-validation="length  required" type="text" data-validation-length="min3" data-validation-error-msg="Заполните поле">
@@ -91,6 +108,10 @@
                             <input class="ch" type="checkbox" id="m1" data-validation="required" data-validation-error-msg="Заполните поле">
                             <label for="m1">Я согласен с правилами игры и безоговорочно принимаю все положения</label>
                           </div>
+                        </div>
+                        <div class="wrapper-txt">
+                          <p>Остались вопросы - свяжитесь с нами! <br> Телефоны горячей линии (с 8.00 до 17.00):<br><a href="callto:+375297471099">+375 29 747 10 99</a><br><a href="callto:+375297474112">+375 29 747 41 12</a></p>
+                          <p>Контактный e-mail:<br><a href="mailto:info@promo-kv.by">info@promo-kv.by</a></p>
                         </div>
                         <div class="box-btn-form">
                           <button class="btn-form">Зарегистрироваться</button>
@@ -165,6 +186,8 @@
           <div class="block-logo-footer"><a class="logo" href="#" style="background-image:url('img/logo.png');"></a></div>
           <div class="wrapper-txt">
             <p>Рекламная игра «Играй со вкусом». Срок проведения рекламной игры: 15.06.2017 — 15.09.2017. Подробности правил рекламной игры нсмотрите <a href="#"> по ссылке </a>. Организатор Частное предприятие «Квартал Вкуса», УНП 190791154. Свидетельство о регистрации №3031 от 09 июня 2017 г., выдано Министерством антимонопольного регулирования и торговли РБ. Территория проведения: торговые объекты сети «Квартал Вкуса», находящиеся на территории Республики Беларусь.</p>
+            <p>Телефоны горячей линии (с 8.00 до 17.00):<br><a href="callto:+375297471099">+375 29 747 10 99</a><br><a href="callto:+375297474112">+375 29 747 41 12</a></p>
+            <p>Контактный e-mail:<br><a href="mailto:info@promo-kv.by">info@promo-kv.by</a></p>
             <p>© 2017, Квартал Вкуса</p>
           </div>
         </div>

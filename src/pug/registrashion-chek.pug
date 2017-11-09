@@ -8,22 +8,24 @@ block content
                     .title Регистрация
                     .container-tabs
                         .container-tab-btn
-                            .tabs-link.current-t(data-tab="tab-1") Регистрирую впервые
-                            .tabs-link(data-tab="tab-2") Уже регистрировал
+                            .tabs-link.current-t(data-tab="tab-1") Зарегистрироваться
+                            .tabs-link(data-tab="tab-2") Войти
                         #tab-1.container-content.tabs-content.current-t
                             .wrapper-form
                                 form.js-form
                                     .wrapper-block-inputs.line-btn
-                                        .wrapper-block-inputs_title Регистрация карточки
+                                        .wrapper-block-inputs_title Регистрация карты
+                                        .wrapper-block-inputs_info-txt Если вы потеряли полученную ранее и зарегистрированную в системе карту, достаточно войти в Ваш личный кабинет и привязать новую карту. При этом присвоенные ранее промо-коды сохранятся.
                                         .container-add
                                             .block-add
                                                 .block-input-label
-                                                    label.label Номер карточки
+                                                    label.label Номер карты
                                                     a(href="javascript:;" data-fancybox data-src="#info-card").link-popup Что это такое?
                                                     input(type="text" data-validation="custom" data-validation-regexp="^[0-9 ]+$" data-validation-error-msg="Заполните поле").input-box
 
                                     .wrapper-block-inputs
                                         .wrapper-block-inputs_title Личные данные
+                                        .wrapper-block-inputs_info-txt Ввод достоверных личных данных - обязательное условие участия в рекламной игре.
                                         .block-input-label
                                             label.label Фамилия Имя Отчество
                                             input(data-validation="length  required" type="text" data-validation-length='min3' data-validation-error-msg="Заполните поле").input-box
@@ -60,6 +62,17 @@ block content
                                             .input-wrapp.block-check-inline
                                                 input.ch(type='checkbox' id='m1' data-validation="required" data-validation-error-msg="Заполните поле")
                                                 label(for='m1') Я согласен с правилами игры и безоговорочно принимаю все положения
+
+                                        .wrapper-txt
+                                            p Остались вопросы - свяжитесь с нами! <br> Телефоны горячей линии (с 8.00 до 17.00):
+                                                br
+                                                a(href='callto:+375297471099') +375 29 747 10 99
+                                                br
+                                                a(href='callto:+375297474112') +375 29 747 41 12
+
+                                            p Контактный e-mail:
+                                                br
+                                                a(href='mailto:info@promo-kv.by') info@promo-kv.by
 
                                         .box-btn-form
                                             button.btn-form Зарегистрироваться
