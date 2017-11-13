@@ -120,6 +120,25 @@ function formResponse(form) {
             });
         }
     }
+
+    if(form.closest('#registrashion-form').length){
+        var cont = form.closest('.wrapper-form'),
+            resp = cont.next('.response');
+        if(resp.length){
+            setTimeout(function () {
+                cont.closest('.container-tabs').find('#tab-1').removeClass('current-t');
+                cont.closest('.container-tabs').find('#tab-2').addClass('current-t');
+                cont.closest('.container-tabs').find('[data-tab="tab-1"]').removeClass('current-t');
+                cont.closest('.container-tabs').find('[data-tab="tab-2"]').addClass('current-t');
+            },30000);
+        }
+        $('.btn-close-r').on('click', function () {
+            cont.closest('.container-tabs').find('#tab-1').removeClass('current-t');
+            cont.closest('.container-tabs').find('#tab-2').addClass('current-t');
+            cont.closest('.container-tabs').find('[data-tab="tab-1"]').removeClass('current-t');
+            cont.closest('.container-tabs').find('[data-tab="tab-2"]').addClass('current-t');
+        });
+    }
 }
 
 function initValidForm() {

@@ -13,7 +13,7 @@ block content
                             .tabs-link(data-tab="tab-2")
                                 span Войти
                         #tab-1.container-content.tabs-content.current-t
-                            .wrapper-form
+                            .wrapper-form#registrashion-form
                                 form.js-form
                                     .wrapper-block-inputs.line-btn
                                         .wrapper-block-inputs_title Регистрация карты
@@ -27,13 +27,14 @@ block content
 
                                     .wrapper-block-inputs
                                         .wrapper-block-inputs_title Личные данные
-                                        .wrapper-block-inputs_info-txt Ввод достоверных личных данных - обязательное условие участия в рекламной игре.
+                                        .wrapper-block-inputs_info-txt.red-txt Ввод достоверных личных данных - обязательное условие участия в рекламной игре.
                                         .block-input-label
                                             label.label Фамилия Имя Отчество
                                             input(data-validation="length  required" type="text" data-validation-length='min3' data-validation-error-msg="Заполните поле").input-box
 
                                         .block-input-label
-                                            label.label E-mail
+                                            label.label E-mail. <span> (Внимательно проверяйте правильность введенного адреса. В случае ошибки восстановление возможно только по запросу на e-mail службы поддержки)</span>
+                                            .wrapper-block-inputs_info-txt-b.red-txt На этот E-mail вам будет выслан Логин и Пароль для входа в кабинет, поэтому внимательно проверяйте правильность введенного адреса.
                                             input(data-validation="email" type="email" data-validation-error-msg="Заполните поле").input-box
 
                                         .block-input-label
@@ -77,21 +78,24 @@ block content
                                                 a(href='mailto:info@promo-kv.by') info@promo-kv.by
 
                                         .box-btn-form
-                                            button.btn-form Зарегистрироваться
+                                            button.btn-form#btn-registrashion Зарегистрироваться
 
                             // Modal Window
                             .wrapper-form.response(style='display: none;')
                                 .wrapper-form
                                     .wrapper-block-inputs
-                                        .wrapper-block-inputs_title Спасибо за обращение!
+                                        .btn-close-r
+                                        .wrapper-block-inputs_title Данные для входа в личный кабинет высланы на ваш E-mail.
                                         .modal-container_txt
-                                            p Ваше сообщение успешно отправлено.
+                                            p Для входа в личный кабинет перейдите на вкладку "Войти" и введите полученные на E-mail данные.
+                                            p Если вы не получили логин и пароль на почту, значит вы неверно указали E-mail при регистрации. Отправьте запрос с указанием карты и корректного E-mail на почту службы поддержки <a href=mailto:info@promo-kv.by"">info@promo-kv.by</a>
 
                         #tab-2.container-content.tabs-content
                             .wrapper-form
                                 form.js-form
                                     .wrapper-block-inputs
                                         .wrapper-block-inputs_title Войти в личный кабинет
+                                        .wrapper-block-inputs_info-txt Если не удается войти по полученному логину и паролю - очистите кэш браузера или попробуйте войти в кабинет через другой браузер.
                                         .block-input-label
                                             label.label E-mail
                                             input(data-validation="email" type="email" data-validation-error-msg="Заполните поле").input-box
@@ -100,7 +104,7 @@ block content
                                             input(type="password" data-validation="custom required" data-validation-error-msg="Заполните поле").input-box
                                         .btn-pass Забыли пароль?
                                         .box-btn-form
-                                            button.btn-form Войти и зарегистрироваться
+                                            button.btn-form#btn-entrance Войти
                             .restore_pass.edit-pass
                                 .wrapper-form
                                         .wrapper-block-inputs
@@ -110,7 +114,7 @@ block content
                                                 input(data-validation="email" type="email" data-validation-error-msg="Заполните поле").input-box
                                             .btn-pass Авторизоваться
                                             .box-btn-form
-                                                button.btn-form Восстановить пароль
+                                                button.btn-form#btn-restore-pass Восстановить пароль
 
                                 // Modal Window
                                 .wrapper-form.response(style='display: none;')

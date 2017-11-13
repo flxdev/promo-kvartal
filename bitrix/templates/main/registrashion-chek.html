@@ -54,7 +54,7 @@
                   <div class="tabs-link" data-tab="tab-2"><span>Войти</span></div>
                 </div>
                 <div class="container-content tabs-content current-t" id="tab-1">
-                  <div class="wrapper-form">
+                  <div class="wrapper-form" id="registrashion-form">
                     <form class="js-form">
                       <div class="wrapper-block-inputs line-btn">
                         <div class="wrapper-block-inputs_title">Регистрация карты</div>
@@ -70,13 +70,14 @@
                       </div>
                       <div class="wrapper-block-inputs">
                         <div class="wrapper-block-inputs_title">Личные данные</div>
-                        <div class="wrapper-block-inputs_info-txt">Ввод достоверных личных данных - обязательное условие участия в рекламной игре.</div>
+                        <div class="wrapper-block-inputs_info-txt red-txt">Ввод достоверных личных данных - обязательное условие участия в рекламной игре.</div>
                         <div class="block-input-label">
                           <label class="label">Фамилия Имя Отчество</label>
                           <input class="input-box" data-validation="length  required" type="text" data-validation-length="min3" data-validation-error-msg="Заполните поле">
                         </div>
                         <div class="block-input-label">
-                          <label class="label">E-mail</label>
+                          <label class="label">E-mail. <span> (Внимательно проверяйте правильность введенного адреса. В случае ошибки восстановление возможно только по запросу на e-mail службы поддержки)</span></label>
+                          <div class="wrapper-block-inputs_info-txt-b red-txt">На этот E-mail вам будет выслан Логин и Пароль для входа в кабинет, поэтому внимательно проверяйте правильность введенного адреса.</div>
                           <input class="input-box" data-validation="email" type="email" data-validation-error-msg="Заполните поле">
                         </div>
                         <div class="block-input-label">
@@ -114,7 +115,7 @@
                           <p>Контактный e-mail:<br><a href="mailto:info@promo-kv.by">info@promo-kv.by</a></p>
                         </div>
                         <div class="box-btn-form">
-                          <button class="btn-form">Зарегистрироваться</button>
+                          <button class="btn-form" id="btn-registrashion">Зарегистрироваться</button>
                         </div>
                       </div>
                     </form>
@@ -123,9 +124,11 @@
                   <div class="wrapper-form response" style="display: none;">
                     <div class="wrapper-form">
                       <div class="wrapper-block-inputs">
-                        <div class="wrapper-block-inputs_title">Спасибо за обращение!</div>
+                        <div class="btn-close-r"></div>
+                        <div class="wrapper-block-inputs_title">Данные для входа в личный кабинет высланы на ваш E-mail.</div>
                         <div class="modal-container_txt">
-                          <p>Ваше сообщение успешно отправлено.</p>
+                          <p>Для входа в личный кабинет перейдите на вкладку "Войти" и введите полученные на E-mail данные.</p>
+                          <p>Если вы не получили логин и пароль на почту, значит вы неверно указали E-mail при регистрации. Отправьте запрос с указанием карты и корректного E-mail на почту службы поддержки <a href=mailto:info@promo-kv.by"">info@promo-kv.by</a></p>
                         </div>
                       </div>
                     </div>
@@ -136,6 +139,7 @@
                     <form class="js-form">
                       <div class="wrapper-block-inputs">
                         <div class="wrapper-block-inputs_title">Войти в личный кабинет</div>
+                        <div class="wrapper-block-inputs_info-txt">Если не удается войти по полученному логину и паролю - очистите кэш браузера или попробуйте войти в кабинет через другой браузер.</div>
                         <div class="block-input-label">
                           <label class="label">E-mail</label>
                           <input class="input-box" data-validation="email" type="email" data-validation-error-msg="Заполните поле">
@@ -146,7 +150,7 @@
                         </div>
                         <div class="btn-pass">Забыли пароль?</div>
                         <div class="box-btn-form">
-                          <button class="btn-form">Войти и зарегистрироваться</button>
+                          <button class="btn-form" id="btn-entrance">Войти</button>
                         </div>
                       </div>
                     </form>
@@ -161,7 +165,7 @@
                         </div>
                         <div class="btn-pass">Авторизоваться</div>
                         <div class="box-btn-form">
-                          <button class="btn-form">Восстановить пароль</button>
+                          <button class="btn-form" id="btn-restore-pass">Восстановить пароль</button>
                         </div>
                       </div>
                     </div>
