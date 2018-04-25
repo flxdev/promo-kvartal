@@ -186,6 +186,49 @@ function initAnchor() {
     });
 }
 
+function inputMaskInit(){
+    var inpTel = $('input[type="tel"]');
+    if(inpTel.length){
+        console.log('tel');
+        inpTel.each(function(){
+            var _t = $(this),
+                _c = _t.parents('.block-input-label').next('.tel-checked');
+            _t.inputmask({
+                mask : "+375(99)999-99-99",
+                showMaskOnHover: false,
+                oncomplete : function(){
+                    if(!_c.hasClass('active')){
+                        _c.slideDown().addClass('active');
+                    }
+                },
+                onincomplete : function(){
+                    if(_c.hasClass('active')){
+                    _c.slideUp().removeClass('active');
+                    }
+                }
+            });
+        });
+    }
+}
+
+function phoneRequest(){
+    $.fancybox.open({
+        src  : '#login-phone-request',
+        type : 'inline',
+        opts : {
+            backFocus : false,
+            smallBtn : false,
+            protect : true,
+            modal : true,
+            hideScrollbar : false,
+        }
+    });
+}
+
+function phoneRequestSuccess(){
+    $.fancybox.close();
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     initSlickPartners();
     initSlickGifts();
@@ -195,4 +238,5 @@ document.addEventListener('DOMContentLoaded', function () {
     initNewPass();
     initAddCheck();
     initAnchor();
+    inputMaskInit();
 });

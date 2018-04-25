@@ -1,10 +1,26 @@
 #info-card(style="display: none;")
-    .container-txt
-        img(src="img/img-new.png"  alt='#')
-        ol
-            li Это 1
-            li Это 2
-            li Это 3
-            li Это 4
+	.container-txt
+		img(src="img/img-new.png"  alt='#')
+		ol
+			li Это 1
+			li Это 2
+			li Это 3
+			li Это 4
 
-        p Рекламная игра «Играй со вкусом». Срок проведения рекламной игры: 15.06.2017 — 15.09.2017. Подробности правил рекламной игры смотрите по ссылке. Организатор Частное предприятие «Квартал Вкуса», УНП 190791154. Свидетельство о регистрации №3031 от 09 июня 2017 г., выдано Министерством антимонопольного регулирования и торговли РБ. Территория проведения: торговые объекты сети «Квартал Вкуса», находящиеся на территории Республики Беларусь.
+		p Рекламная игра «Играй со вкусом». Срок проведения рекламной игры: 15.06.2017 — 15.09.2017. Подробности правил рекламной игры смотрите по ссылке. Организатор Частное предприятие «Квартал Вкуса», УНП 190791154. Свидетельство о регистрации №3031 от 09 июня 2017 г., выдано Министерством антимонопольного регулирования и торговли РБ. Территория проведения: торговые объекты сети «Квартал Вкуса», находящиеся на территории Республики Беларусь.
+
+#login-phone-request(style="display: none;")
+	form.js-form.phone-request
+		.wrapper-block-inputs
+			.wrapper-block-inputs_title Подтвердите Ваш номер телефона
+			.wrapper-block-inputs_info-txt На указанный номер будет выслано SMS-сообщение
+			.block-input-label
+				label.label Телефон
+				input(type="tel" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Заполните поле").input-box
+
+			.block-input-label.tel-checked
+				label.label Проверка телефона
+				.btn-wrap
+					a.btn-link-green(href="#" onclick="phoneRequestSuccess();") Выслать КОД
+				input(type="text" data-validation="custom" data-validation-error-msg="Заполните поле").input-box.w50
+				

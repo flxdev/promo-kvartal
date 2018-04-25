@@ -41,6 +41,14 @@ block content
                                             label.label Телефон
                                             input(type="tel" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Заполните поле").input-box
 
+                                        .block-input-label.tel-checked
+                                            label.label Проверка телефона
+                                            .btn-wrap
+                                                a.btn-link-green(href="#") Выслать КОД
+                                            input(type="text" data-validation="custom" data-validation-error-msg="Заполните поле").input-box.w50
+                                            
+
+
                                         .block-input-label
                                             label.label Населённый пункт
                                             input(type="text" data-validation="custom required" data-validation-error-msg="Укажите населённый пункт, используя только киррилицу").input-box
@@ -104,7 +112,7 @@ block content
                                             input(type="password" data-validation="custom required" data-validation-error-msg="Заполните поле").input-box
                                         .btn-pass Забыли пароль?
                                         .box-btn-form
-                                            button.btn-form#btn-entrance Войти
+                                            button.btn-form#btn-entrance(data-src="#login-phone-request" onclick="phoneRequest();") Войти
                             .restore_pass.edit-pass
                                 .wrapper-form
                                         .wrapper-block-inputs

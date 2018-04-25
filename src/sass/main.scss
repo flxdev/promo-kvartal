@@ -855,6 +855,9 @@ body{
     color: black;
     padding: 20px 20px;
     box-shadow: 7px 7px 0 0 rgba(0,0,0,.07);
+    -webkit-transition: border-color .2s ease-in;
+    -o-transition: border-color .2s ease-in;
+    transition: border-color .2s ease-in;
   }
   .input-box.error{
     border-color: #d81c09;
@@ -1310,3 +1313,82 @@ body{
   right: -30px;
   top: -30px;
 }
+
+
+
+/* new style / check-phone */
+
+.block-input-label{
+  .input-box{
+    -webkit-transition: border-color .2s ease-in;
+    -o-transition: border-color .2s ease-in;
+    transition: border-color .2s ease-in;
+  }
+  .input-box.w50{
+    width: 50%;
+    display: inline-block;
+  }
+}
+.block-input-label.tel-checked{
+  margin-top: 25px;
+  display: none;
+  .btn-wrap{
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+  }
+  .btn-link-green{
+    display: inline-block;
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0;
+    float: none;
+  }
+}
+#login-phone-request{
+  width: 90%;
+  max-width: 460px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.phone-request{
+  font-size: 0;
+}
+
+@media all and (max-width: 500px){
+  .block-input-label{
+    .input-box.w50{
+      width: 100%;
+    }
+  }
+  .block-input-label.tel-checked{
+    .btn-wrap{
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+// .modal-popup{
+//   display: none;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   .modal-popup-bg{
+//     position: absolute;
+//     z-index: -1;
+//     background: #1e1e1e;
+//     opacity: .87;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//   }
+// }
+
+/* new style */
