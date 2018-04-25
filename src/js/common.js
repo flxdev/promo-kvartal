@@ -194,7 +194,7 @@ function inputMaskInit(){
             var _t = $(this),
                 _c = _t.parents('.block-input-label').next('.tel-checked');
             _t.inputmask({
-                mask : "+375(99)999-99-99",
+                mask : "+375 (99) 999-99-99",
                 showMaskOnHover: false,
                 oncomplete : function(){
                     if(!_c.hasClass('active')){
@@ -218,7 +218,6 @@ function phoneRequest(){
         opts : {
             backFocus : false,
             smallBtn : false,
-            protect : true,
             modal : true,
             hideScrollbar : false,
         }

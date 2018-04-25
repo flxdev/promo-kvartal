@@ -2000,7 +2000,7 @@ body {
   .block-input-label.tel-checked .btn-wrap {
     width: 50%;
     display: inline-block;
-    text-align: left; }
+    text-align: right; }
   .block-input-label.tel-checked .btn-link-green {
     display: inline-block;
     position: relative;
