@@ -85,12 +85,14 @@ function initMap() {
                 });
             objectManager.clusters.options.set('preset', 'islands#orangeClusterIcons');
             myMap.geoObjects.add(objectManager);
-
-            $.ajax({
-                url: "js/map.json"
-            }).done(function(data) {
-                objectManager.add(data);
-            });
+	        objectManager.add(mapPoints);
+            // $.ajax({
+            //     url: "/local/templates/main/js/map.json"
+            // }).done(function(data) {
+            //     console.log(data);
+	         //    console.log(mapPoints);
+            //     objectManager.add(data);
+            // });
             if ($(window).width() < 1023) {
                 myMap.behaviors.disable('drag');
                 myMap.behaviors.disable('scrollZoom');
@@ -115,7 +117,7 @@ function formResponse(form) {
         var cont = form.closest('.wrapper-form'),
             resp = cont.next('.response');
         if(resp.length){
-            cont.fadeOut("slow",function(){
+            cont.fadeOut("fast",function(){
                 resp.fadeIn("slow");
             });
         }
@@ -130,7 +132,7 @@ function formResponse(form) {
                 cont.closest('.container-tabs').find('#tab-2').addClass('current-t');
                 cont.closest('.container-tabs').find('[data-tab="tab-1"]').removeClass('current-t');
                 cont.closest('.container-tabs').find('[data-tab="tab-2"]').addClass('current-t');
-            },30000);
+            },10000);
         }
         $('.btn-close-r').on('click', function () {
             cont.closest('.container-tabs').find('#tab-1').removeClass('current-t');
@@ -150,8 +152,9 @@ function initValidForm() {
                 form: form_this,
                 borderColorOnError: true,
                 scrollToTopOnError: false,
-                modules: 'html5',
-                onSuccess: function ($form) {
+                modules: 'html5, sanitize, security',
+	            lang: 'ru',
+	            onSuccess: function ($form) {
                     formResponse(form_this);
 
                     return false;
@@ -189,7 +192,6 @@ function initAnchor() {
 function inputMaskInit(){
     var inpTel = $('input[type="tel"]');
     if(inpTel.length){
-        console.log('tel');
         inpTel.each(function(){
             var _t = $(this),
                 _c = _t.parents('.block-input-label').next('.tel-checked');
@@ -211,20 +213,20 @@ function inputMaskInit(){
     }
 }
 
-function phoneRequest(){
+function openPopup($block){
     $.fancybox.open({
-        src  : '#login-phone-request',
+        src  : $block,
         type : 'inline',
         opts : {
             backFocus : false,
             smallBtn : false,
             modal : true,
-            hideScrollbar : false,
+            hideScrollbar : false
         }
     });
 }
 
-function phoneRequestSuccess(){
+function closePopup(){
     $.fancybox.close();
 }
 
