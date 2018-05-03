@@ -31,7 +31,46 @@ block content
                                         .block-input-label
                                             label.label Фамилия Имя Отчество
                                             input(data-validation="length  required" type="text" data-validation-length='min3' data-validation-error-msg="Заполните поле").input-box
-
+                                        .block-input-label
+                                            .label Пол
+                                            label.select-radio-label.radio-simple
+                                                input(type="radio", name='pol' ,checked='checked',data-validation='required',data-validation-error-msg="Обязательное поле", value='muz').select-radio-input-real
+                                                .select-radio-inner
+                                                    span.select-radio-input
+                                                        span.select-radio-input-fake
+                                                    span.select-radio-text Муж
+                                            label.select-radio-label.radio-simple
+                                                input(type="radio", name='pol',data-validation='required',data-validation-error-msg="Обязательное поле", value='Жен').select-radio-input-real
+                                                .select-radio-inner
+                                                    span.select-radio-input
+                                                        span.select-radio-input-fake
+                                                    span.select-radio-text Жен
+                                        .block-input-label
+                                            label.label Возраст
+                                            input(type="number" data-validation="number"  data-validation-error-msg="Заполните поле" data-validation-allowing="range[1;100]",  onkeydown="javascript: return event.keyCode == 69 ? false : true").input-box                                        
+                                        .block-input-label
+                                            label.label Дети до 18
+                                            select.js-select(
+                                                    name='CustomerThemeOrder',
+                                                    data-validation='length',
+                                                    data-validation-length='min1', 
+                                                    data-validation-event="change",
+                                                    id='selInp2')
+                                                    option(value="0") Нету
+                                                    option(value="1") 1
+                                                    option(value="2") 2
+                                                    option(value=">3") 3 и более
+                                        .block-input-label
+                                            label.label Семейное подожение
+                                            select.js-select(
+                                                    name='CustomerThemeOrder',
+                                                    data-validation='length',
+                                                    data-validation-length='min1', 
+                                                    data-validation-event="change",
+                                                    id='selInp2')
+                                                    option(value="1") Холост
+                                                    option(value="2") Женат
+                                                    option(value=">3") Разведен
                                         .block-input-label
                                             label.label E-mail. <span> (Внимательно проверяйте правильность введенного адреса. В случае ошибки восстановление возможно только по запросу на e-mail службы поддержки)</span>
                                             .wrapper-block-inputs_info-txt-b.red-txt На этот E-mail вам будет выслан Логин и Пароль для входа в кабинет, поэтому внимательно проверяйте правильность введенного адреса.

@@ -3,9 +3,159 @@
 @import lib/reset
 @import lib/slick
 @import lib/jquery.fancybox
+@import lib/sumoselect.min
 // @import lib/sprite
 // @import lib/svgfont
 @import main
 @import media
 
-//@import lib/btn
+.select-radio
+  display: inline-block
+  vertical-align: middle
+ 
+  &.disabled 
+    opacity: 0.5
+    pointer-events: none 
+    * 
+      pointer-events: none 
+  &-label 
+    display: inline-block
+    position: relative
+    cursor: pointer
+    width: 25%
+    min-width: 140px
+    +nosel
+    &.radio-simple
+      .select-radio-input
+        width: 36px !important
+        height: 20px
+        vertical-align: top
+        margin-top: -3px
+        &-real
+          width: 0
+          height: 0
+          opacity: 0
+          position: absolute
+          left: 0
+          top: 0
+          &[type='checkbox']
+            &+.select-radio-inner
+              .select-radio-input
+                overflow: visible
+                .select-radio-input-fake
+                  border-radius: 3px
+                  position: relative
+                  &:after
+                    width: 19px
+                    height: 19px
+                    background-color: transparent 
+                    margin-bottom: 2px
+                    border-radius: 0
+                    background-size: contain
+                    background-position: center
+                    background-repeat: no-repeat
+                    position: absolute
+                    right: -4px
+                    top: -5px
+                    transform-origin: left bottom
+                    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAsCAMAAADLhrFKAAAAJ1BMVEVHcEwtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUi0oQZAAAADHRSTlMA7Rs1CWmK21Wmzr/HNujwAAAAyUlEQVR42o2U0Q6EIBADBZZFoP//vRePh42J4vBGMmnaUj3wyQWjpWK0Oka9U9ImRvOYRtHWMi0gJY6qcLRy1Dk6DKM0V05Sob2KmrUhTZirC5t1SSfcq6QO2xJ2kBN2YIM76OGA5FKluegrWJNedpAfzL7t4HS73y80vYzWR7k1uw025RaXC2222eklHXXp3JfkFg7aMxZ5WlkOPofg+ksvB+Oj/xUpfcqG0SXLRkBkoy2pwdHiLdq4LQHkwz/QkCX5/MCnbz/IH2umCWXGP6xgAAAAAElFTkSuQmCC);
+        &-fake
+          display: inline-block
+          width: 20px
+          height: 20px
+          border-radius: 50%
+          border: 1px solid black
+          +vertical 
+          &:after
+            content: ''
+            display: inline-block
+            vertical-align: middle
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            background-color: black
+            +tr(transform .3s cubic-bezier(.175,.885,.32,1.15))
+            transform: scale(0)
+      .select-radio-inner
+        border: none
+        text-align: left
+        padding-left: 0
+        height: auto
+      .select-radio-text
+        width: calc(100% - 36px)
+        max-width: 240px
+        font-size: 16px
+        font-weight: 500
+        display: inline-block
+        vertical-align: middle
+        font-family: Helios
+        padding-left: 10px
+      .select-radio-input-real
+        &:checked
+          &~ .select-radio-inner
+            .select-radio-input
+              &-fake 
+                border-color: green
+                &:after
+                  transform: none
+.js-select
+  cursor: pointer
+  +r(640)
+    opacity: 1
+    &+.CaptionCont
+      z-index: 1
+      background: 0 0
+      pointer-events: none
+
+      span 
+        opacity: 0
+      label
+        background-color: white
+  &~ .optWrapper
+    top: 100%
+    margin-top: 10px
+    box-shadow: 0px 1px 20px 0px rgba(44, 30, 28, 0.12);
+    border-radius: 3px
+    border: none
+    padding: 15px 15px
+    font-size: 14px
+    z-index: 2
+    ul 
+      max-height: 180px
+      width: 100%
+      overflow-y: auto
+      +scrollbar
+        width: 5px
+      +scrollbar-thumb  
+        background-color: #e0dedd
+      label
+        padding: 10px 8px
+    li.opt
+      border: none
+      +tr(color .3s)
+      position: relative
+      padding: 0 !important
+      +nosel
+      border-radius: 0 !important
+      &.sel 
+        background-color: #e0dedd
+      &:before
+        content: ''
+        display: inline-block
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        +tr(transform .2s)
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAsCAMAAADLhrFKAAAAJ1BMVEVHcEwtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUi0oQZAAAADHRSTlMA7Rs1CWmK21Wmzr/HNujwAAAAyUlEQVR42o2U0Q6EIBADBZZFoP//vRePh42J4vBGMmnaUj3wyQWjpWK0Oka9U9ImRvOYRtHWMi0gJY6qcLRy1Dk6DKM0V05Sob2KmrUhTZirC5t1SSfcq6QO2xJ2kBN2YIM76OGA5FKluegrWJNedpAfzL7t4HS73y80vYzWR7k1uw025RaXC2222eklHXXp3JfkFg7aMxZ5WlkOPofg+ksvB+Oj/xUpfcqG0SXLRkBkoy2pwdHiLdq4LQHkwz/QkCX5/MCnbz/IH2umCWXGP6xgAAAAAElFTkSuQmCC);
+        right: 1px
+        height: 100%
+        top: -1px
+        position: absolute
+        pointer-events: none
+        width: 19px
+        transform: scale(0)
+      &.selected
+        font-weight: bold
+        color: #000
+        &:before
+          transform: none

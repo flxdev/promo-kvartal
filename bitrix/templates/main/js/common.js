@@ -68,6 +68,16 @@ function initSlickGifts() {
         ]
     });
 }
+function promoslide() {
+    $('.js-promo-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        draggable: false,
+        fade: true,
+        arrows: false,
+    });
+}
 
 function initMap() {
     if($('#map').length === 1){
@@ -85,14 +95,12 @@ function initMap() {
                 });
             objectManager.clusters.options.set('preset', 'islands#orangeClusterIcons');
             myMap.geoObjects.add(objectManager);
-	        objectManager.add(mapPoints);
-            // $.ajax({
-            //     url: "/local/templates/main/js/map.json"
-            // }).done(function(data) {
-            //     console.log(data);
-	         //    console.log(mapPoints);
-            //     objectManager.add(data);
-            // });
+
+            $.ajax({
+                url: "js/map.json"
+            }).done(function(data) {
+                objectManager.add(data);
+            });
             if ($(window).width() < 1023) {
                 myMap.behaviors.disable('drag');
                 myMap.behaviors.disable('scrollZoom');
@@ -117,7 +125,7 @@ function formResponse(form) {
         var cont = form.closest('.wrapper-form'),
             resp = cont.next('.response');
         if(resp.length){
-            cont.fadeOut("fast",function(){
+            cont.fadeOut("slow",function(){
                 resp.fadeIn("slow");
             });
         }
@@ -132,7 +140,7 @@ function formResponse(form) {
                 cont.closest('.container-tabs').find('#tab-2').addClass('current-t');
                 cont.closest('.container-tabs').find('[data-tab="tab-1"]').removeClass('current-t');
                 cont.closest('.container-tabs').find('[data-tab="tab-2"]').addClass('current-t');
-            },10000);
+            },30000);
         }
         $('.btn-close-r').on('click', function () {
             cont.closest('.container-tabs').find('#tab-1').removeClass('current-t');
@@ -152,9 +160,8 @@ function initValidForm() {
                 form: form_this,
                 borderColorOnError: true,
                 scrollToTopOnError: false,
-                modules: 'html5, sanitize, security',
-	            lang: 'ru',
-	            onSuccess: function ($form) {
+                modules: 'html5',
+                onSuccess: function ($form) {
                     formResponse(form_this);
 
                     return false;
@@ -192,6 +199,7 @@ function initAnchor() {
 function inputMaskInit(){
     var inpTel = $('input[type="tel"]');
     if(inpTel.length){
+        console.log('tel');
         inpTel.each(function(){
             var _t = $(this),
                 _c = _t.parents('.block-input-label').next('.tel-checked');
@@ -213,22 +221,49 @@ function inputMaskInit(){
     }
 }
 
-function openPopup($block){
+function phoneRequest(){
     $.fancybox.open({
-        src  : $block,
+        src  : '#login-phone-request',
         type : 'inline',
         opts : {
             backFocus : false,
             smallBtn : false,
             modal : true,
-            hideScrollbar : false
+            hideScrollbar : false,
         }
     });
 }
 
-function closePopup(){
+function phoneRequestSuccess(){
     $.fancybox.close();
 }
+function SimpleSelects(){
+    var simpleSelect = $('.js-select');
+    simpleSelect.each(function() {
+      var _ = $(this);
+      if(_.hasClass('SumoUnder') && _[0].sumo === undefined) {
+        _.nextAll('.CaptionCont').remove();
+        _.nextAll('.optWrapper').remove();
+        // _.unwrap();
+        initSelect(_);
+        // return;
+      }else{
+        initSelect(_);
+      }
+      function initSelect(item) {
+        item.SumoSelect({
+          triggerChangeCombined : false,
+        });
+
+        item.off('sumo:opened').on('sumo:opened',function () {
+          item.closest('.input-wrapper').addClass('is-open');
+        });
+        item.off('sumo:closed').on('sumo:closed',function () {
+          item.closest('.input-wrapper').removeClass('is-open');
+        }); 
+      }
+    });
+};
 
 document.addEventListener('DOMContentLoaded', function () {
     initSlickPartners();
@@ -240,4 +275,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initAddCheck();
     initAnchor();
     inputMaskInit();
+    promoslide() ;
+    SimpleSelects();
 });

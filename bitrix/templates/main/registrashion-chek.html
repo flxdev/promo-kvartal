@@ -34,12 +34,10 @@
       <div class="container-wrapper"><a class="logo header-logo" href="#" style="background-image:url('img/logo.png')"></a>
         <nav class="menu">
           <ul>
-            <li><a class="link-anchor-menu" href="#gifts">Призы</a></li>
             <li><a href="news.html">новости</a></li>
             <li><a class="link-anchor-menu" href="#map">карта магазинов</a></li>
-            <li><a href="#">правила участия</a></li>
           </ul>
-        </nav><a class="btn-link-green" href="registrashion-chek.html">Вход/Регистрация</a>
+        </nav><a class="btn-link-green" href="registrashion-chek.html#tab-2">Вход</a><a class="btn-link-green" href="registrashion-chek.html#tab-1">Регистрация</a>
       </div>
     </header>
     <div class="out">
@@ -74,6 +72,38 @@
                         <div class="block-input-label">
                           <label class="label">Фамилия Имя Отчество</label>
                           <input class="input-box" data-validation="length  required" type="text" data-validation-length="min3" data-validation-error-msg="Заполните поле">
+                        </div>
+                        <div class="block-input-label">
+                          <div class="label">Пол</div>
+                          <label class="select-radio-label radio-simple">
+                            <input class="select-radio-input-real" type="radio" name="pol" checked="checked" data-validation="required" data-validation-error-msg="Обязательное поле" value="muz">
+                            <div class="select-radio-inner"><span class="select-radio-input"><span class="select-radio-input-fake"></span></span><span class="select-radio-text">Муж</span></div>
+                          </label>
+                          <label class="select-radio-label radio-simple">
+                            <input class="select-radio-input-real" type="radio" name="pol" data-validation="required" data-validation-error-msg="Обязательное поле" value="Жен">
+                            <div class="select-radio-inner"><span class="select-radio-input"><span class="select-radio-input-fake"></span></span><span class="select-radio-text">Жен</span></div>
+                          </label>
+                        </div>
+                        <div class="block-input-label">
+                          <label class="label">Возраст</label>
+                          <input class="input-box" type="number" data-validation="number" data-validation-error-msg="Заполните поле" data-validation-allowing="range[1;100]" onkeydown="javascript: return event.keyCode == 69 ? false : true">
+                        </div>
+                        <div class="block-input-label">
+                          <label class="label">Дети до 18</label>
+                          <select class="js-select" name="CustomerThemeOrder" data-validation="length" data-validation-length="min1" data-validation-event="change" id="selInp2">
+                            <option value="0">Нету</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="&gt;3">3 и более</option>
+                          </select>
+                        </div>
+                        <div class="block-input-label">
+                          <label class="label">Семейное подожение</label>
+                          <select class="js-select" name="CustomerThemeOrder" data-validation="length" data-validation-length="min1" data-validation-event="change" id="selInp2">
+                            <option value="1">Холост</option>
+                            <option value="2">Женат</option>
+                            <option value="&gt;3">Разведен</option>
+                          </select>
                         </div>
                         <div class="block-input-label">
                           <label class="label">E-mail. <span> (Внимательно проверяйте правильность введенного адреса. В случае ошибки восстановление возможно только по запросу на e-mail службы поддержки)</span></label>

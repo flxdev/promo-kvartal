@@ -5,3 +5,4 @@
 //=include lib/jquery.fancybox.min.js
 
 //=include lib/jquery.inputmask.bundle.js
+//=include lib/jquery.sumoselect.min.js
