@@ -1434,6 +1434,17 @@ body{
 }
 }
 }
+.btn-eye{
+	position: absolute;
+	right: 0;
+	top: 28px;
+	width: 40px;
+	height: 63px;
+	background-position: center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
 .promo-slider{
    .slick-dots{
     padding-bottom: 5px;
@@ -1448,14 +1459,14 @@ body{
 
   }
   &-item{
-   min-height: 678px;   
-   position: relative;
-   display: flex !important;
-   flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding-bottom: 50px;
-
+	min-height: 678px;   
+	position: relative;
+	display: flex !important;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding-bottom: 50px;
+	margin-top: 30px;
   &-cards{
     width: 50%;
     margin-bottom: -20px;
@@ -1468,7 +1479,7 @@ body{
     left: 0;
     top: 0;
     width: 100%;
-    bottom: -100px;
+    bottom: 0;
     z-index: -1;
     padding-left: 40px;
     padding-right: 40px;

@@ -277,4 +277,13 @@ document.addEventListener('DOMContentLoaded', function () {
     inputMaskInit();
     promoslide() ;
     SimpleSelects();
+    $('.btn-eye').on('click',function(){
+        var parent = $(this).parent();
+        var inp = parent.find('input');
+        if(inp.attr('type') === 'password'){
+            inp.attr('type', 'text')
+        }else{
+            inp.attr('type', 'password')
+        }
+    })
 });

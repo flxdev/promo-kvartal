@@ -2354,6 +2354,17 @@ body {
 .phone-request {
   font-size: 0; }
 
+.btn-eye {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  width: 40px;
+  height: 63px;
+  background-position: center;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+
 .promo-slider .slick-dots {
   padding-bottom: 5px; }
 
@@ -2383,7 +2394,8 @@ body {
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  margin-top: 30px; }
   .promo-slider-item-cards {
     width: 50%;
     margin-bottom: -20px; }
@@ -2394,7 +2406,7 @@ body {
     left: 0;
     top: 0;
     width: 100%;
-    bottom: -100px;
+    bottom: 0;
     z-index: -1;
     padding-left: 40px;
     padding-right: 40px; }
