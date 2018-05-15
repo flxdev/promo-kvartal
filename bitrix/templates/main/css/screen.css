@@ -2306,6 +2306,14 @@ body {
   display: block;
   margin-bottom: 10px; }
 
+label.label:after {
+  content: '*';
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: top;
+  color: red;
+  margin-left: 5px; }
+
 .red-txt {
   color: red; }
 
