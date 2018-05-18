@@ -318,6 +318,7 @@ body{
 .container-gifts{
   width: 100%;
   padding-bottom: 40px;
+  padding-top: 40px;
   .container-gifts_title{
     @include fontHeliosBlack;
     color: white;
@@ -359,6 +360,7 @@ body{
       height: 260px;
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       border-radius: 50%;
       border: 8px solid #d81c09;
     }
@@ -1453,6 +1455,7 @@ label.label:after{
 	cursor: pointer;
 }
 .promo-slider{
+  padding-bottom: 40px;
    .slick-dots{
     padding-bottom: 5px;
    }
@@ -1570,6 +1573,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .SumoSelect.open>.optWrapper{
   top: 100%;
+}
+.table-refackt{
+  overflow-x: auto;
+  table{
+    min-width: 600px;
+  }
 }
 // .modal-popup{
 //   display: none;
