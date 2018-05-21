@@ -2316,6 +2316,9 @@ label.label:after {
   color: red;
   margin-left: 5px; }
 
+label.label.unreq:after {
+  display: none; }
+
 .red-txt {
   color: red; }
 
