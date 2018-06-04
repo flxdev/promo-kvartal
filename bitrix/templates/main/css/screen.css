@@ -2720,11 +2720,30 @@ input[type=number]::-webkit-outer-spin-button {
   .container-wrapper{
     width: 100%;
     padding: 0 20px; }
+  .header .container-wrapper{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap; }
+  .header .container-wrapper .logo{
+    width: 40%; }
   .menu{
-    display: none; }
+    -webkit-box-ordinal-group: 5;
+    -webkit-order: 4;
+    -ms-flex-order: 4;
+    order: 4;
+    width: 100%;
+    margin-left: 0;
+    overflow-x: auto;
+    margin-top: 10px; }
+  .menu ul{
+    white-space: nowrap; }
+  .menu li a{
+    padding: 20px 10px; }
   .header{
     overflow: hidden;
-    height: 80px; }
+    padding-top: 20px; }
   .block-logo-footer{
     width: 40%; }
   .footer .wrapper{

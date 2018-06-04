@@ -83,12 +83,28 @@
     width: 100%;
     padding: 0 20px;
   }
+  .header .container-wrapper{
+    flex-flow: row wrap;
+    .logo {
+     width: 40% 
+    }
+  }
   .menu{
-    display: none;
+    order: 4;
+    width: 100%;
+    margin-left: 0;
+    overflow-x: auto;
+    margin-top: 10px;
+    ul{
+      white-space: nowrap;
+    }
+    li a{
+          padding: 20px 10px;
+    }
   }
   .header{
     overflow: hidden;
-    height: 80px;
+    padding-top: 20px;
   }
   .block-logo-footer {
     width: 40%;
